@@ -1,0 +1,794 @@
+/* =========================================================
+   LEFT PANEL
+========================================================= */
+
+.phoenix-brand-panel {
+    position: relative;
+    overflow: hidden;
+    background: #07152f;
+    isolation: isolate;
+}
+
+
+/* =========================================================
+   LEFT ANIMATED BACKGROUND
+========================================================= */
+
+.phoenix-left-animation {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    z-index: 0;
+    pointer-events: none;
+}
+
+
+/* Grid */
+/* 
+.left-grid {
+    position: absolute;
+    inset: -50%;
+    background-image:
+        linear-gradient(
+            rgba(255, 255, 255, 0.035) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.035) 1px,
+            transparent 1px
+        );
+    background-size: 45px 45px;
+    transform: rotate(12deg);
+    animation: leftGridMove 20s linear infinite;
+} */
+
+@keyframes leftGridMove {
+    0% {
+        transform: rotate(12deg) translate(0, 0);
+    }
+
+    50% {
+        transform: rotate(12deg) translate(30px, 20px);
+    }
+
+    100% {
+        transform: rotate(12deg) translate(0, 0);
+    }
+}
+
+
+/* =========================================================
+   GLOW
+========================================================= */
+
+.left-glow {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(70px);
+    opacity: 0.25;
+    animation: leftGlowMove 8s ease-in-out infinite alternate;
+}
+
+.left-glow-1 {
+    width: 280px;
+    height: 280px;
+    top: -80px;
+    left: -80px;
+    background: #1e6bff;
+}
+
+.left-glow-2 {
+    width: 240px;
+    height: 240px;
+    right: -70px;
+    bottom: 80px;
+    background: #00a8ff;
+    animation-delay: 2s;
+}
+
+.left-glow-3 {
+    width: 160px;
+    height: 160px;
+    left: 45%;
+    bottom: -80px;
+    background: #246bfd;
+    animation-delay: 4s;
+}
+
+@keyframes leftGlowMove {
+    from {
+        transform: translate(0, 0) scale(1);
+    }
+
+    to {
+        transform: translate(30px, -25px) scale(1.2);
+    }
+}
+
+
+/* =========================================================
+   ANIMATED LINES
+========================================================= */
+
+.left-line {
+    position: absolute;
+    height: 1px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(80, 170, 255, 0.65),
+        transparent
+    );
+    opacity: 0.45;
+}
+
+.left-line-1 {
+    width: 70%;
+    top: 23%;
+    left: -20%;
+    transform: rotate(-18deg);
+    animation: lineMove1 8s linear infinite;
+}
+
+.left-line-2 {
+    width: 65%;
+    top: 55%;
+    right: -20%;
+    transform: rotate(22deg);
+    animation: lineMove2 10s linear infinite;
+}
+
+.left-line-3 {
+    width: 55%;
+    bottom: 18%;
+    left: -10%;
+    transform: rotate(-12deg);
+    animation: lineMove3 9s linear infinite;
+}
+
+@keyframes lineMove1 {
+    0% {
+        transform: translateX(-20%) rotate(-18deg);
+        opacity: 0;
+    }
+
+    30% {
+        opacity: 0.5;
+    }
+
+    70% {
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: translateX(120%) rotate(-18deg);
+        opacity: 0;
+    }
+}
+
+@keyframes lineMove2 {
+    0% {
+        transform: translateX(20%) rotate(22deg);
+        opacity: 0;
+    }
+
+    30% {
+        opacity: 0.5;
+    }
+
+    70% {
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: translateX(-120%) rotate(22deg);
+        opacity: 0;
+    }
+}
+
+@keyframes lineMove3 {
+    0% {
+        transform: translateX(-20%) rotate(-12deg);
+        opacity: 0;
+    }
+
+    30% {
+        opacity: 0.45;
+    }
+
+    70% {
+        opacity: 0.45;
+    }
+
+    100% {
+        transform: translateX(120%) rotate(-12deg);
+        opacity: 0;
+    }
+}
+
+
+/* =========================================================
+   ORBITS
+========================================================= */
+
+.left-orbit {
+    position: absolute;
+    border: 1px solid rgba(80, 170, 255, 0.15);
+    border-radius: 50%;
+    animation: orbitRotate 18s linear infinite;
+}
+
+.orbit-1 {
+    width: 420px;
+    height: 420px;
+    right: -180px;
+    top: 50%;
+}
+
+.orbit-2 {
+    width: 280px;
+    height: 280px;
+    left: -150px;
+    bottom: -80px;
+    animation-duration: 14s;
+    animation-direction: reverse;
+}
+
+@keyframes orbitRotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* =========================================================
+   PARTICLE DOTS
+========================================================= */
+
+.left-dot {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #62b5ff;
+    box-shadow: 0 0 12px rgba(98, 181, 255, 0.8);
+    animation: dotFloat 5s ease-in-out infinite;
+}
+
+.left-dot-1 {
+    left: 12%;
+    top: 20%;
+    animation-delay: 0s;
+}
+
+.left-dot-2 {
+    left: 35%;
+    top: 12%;
+    animation-delay: 1s;
+}
+
+.left-dot-3 {
+    right: 18%;
+    top: 28%;
+    animation-delay: 2s;
+}
+
+.left-dot-4 {
+    right: 30%;
+    bottom: 25%;
+    animation-delay: 3s;
+}
+
+.left-dot-5 {
+    left: 20%;
+    bottom: 18%;
+    animation-delay: 1.5s;
+}
+
+.left-dot-6 {
+    left: 55%;
+    bottom: 12%;
+    animation-delay: 2.5s;
+}
+
+@keyframes dotFloat {
+    0%,
+    100% {
+        transform: translateY(0) scale(1);
+        opacity: 0.35;
+    }
+
+    50% {
+        transform: translateY(-18px) scale(1.5);
+        opacity: 1;
+    }
+}
+
+
+/* =========================================================
+   CONTENT ABOVE ANIMATION
+========================================================= */
+
+.phoenix-brand-content {
+    position: relative;
+    z-index: 5;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.phoenix-logo-wrapper {
+    position: relative;
+    width: 90px;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.phoenix-logo {
+    width: 68px;
+    height: 68px;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: white;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(8px);
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.25),
+        0 0 30px rgba(50, 140, 255, 0.15);
+}
+
+.phoenix-logo-circle {
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid rgba(100, 180, 255, 0.25);
+}
+
+.circle-1 {
+    width: 82px;
+    height: 82px;
+    animation: circleRotate 12s linear infinite;
+}
+
+.circle-2 {
+    width: 94px;
+    height: 94px;
+    border-style: dashed;
+    animation: circleRotate 18s linear infinite reverse;
+}
+
+@keyframes circleRotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* =========================================================
+   BRAND TEXT
+========================================================= */
+
+.phoenix-label {
+    color: #63b6ff;
+    letter-spacing: 3px;
+    font-weight: 600;
+}
+
+.phoenix-title {
+    color: #ffffff;
+    font-size: clamp(42px, 5vw, 68px);
+    font-weight: 800;
+    letter-spacing: -2px;
+    margin: 0;
+}
+
+.phoenix-subtitle {
+    color: rgba(255, 255, 255, 0.78);
+    font-weight: 400;
+}
+
+.phoenix-description {
+    color: rgba(255, 255, 255, 0.62);
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   INFORMATION ITEMS
+========================================================= */
+
+.phoenix-information {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.phoenix-info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    color: white;
+}
+
+.phoenix-info-number {
+    font-size: 13px;
+    font-weight: 700;
+    color: #5eb4ff;
+    letter-spacing: 1px;
+    min-width: 28px;
+}
+
+.phoenix-info-title {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 3px;
+}
+
+.phoenix-info-item small {
+    color: rgba(255, 255, 255, 0.48);
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   BOTTOM TEXT
+========================================================= */
+
+.phoenix-bottom-text {
+    margin-top: 45px;
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: rgba(255, 255, 255, 0.35);
+}
+
+.phoenix-bottom-text .separator {
+    margin: 0 8px;
+    color: #4da9ff;
+}
+
+
+/* =========================================================
+   RIGHT LOGIN PANEL
+========================================================= */
+
+.phoenix-login-panel {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 650px;
+}
+
+.phoenix-form-container {
+    max-width: 460px;
+    padding: 45px;
+}
+
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+.phoenix-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 12px;
+    border-radius: 50px;
+    background: #f1f8f4;
+    color: #27804e;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.phoenix-status-dot {
+    width: 7px;
+    height: 7px;
+    background: #2ebd68;
+    border-radius: 50%;
+    box-shadow: 0 0 8px rgba(46, 189, 104, 0.5);
+    animation: statusPulse 2s infinite;
+}
+
+@keyframes statusPulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(1.35);
+        opacity: 0.6;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+
+/* =========================================================
+   LOGIN HEADING
+========================================================= */
+
+.phoenix-login-title {
+    font-size: 34px;
+    font-weight: 750;
+    color: #14213d;
+    margin-bottom: 8px;
+}
+
+.phoenix-login-description {
+    color: #7c8798;
+    margin-bottom: 0;
+}
+
+
+/* =========================================================
+   LABEL
+========================================================= */
+
+.phoenix-field-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #344054;
+    margin-bottom: 7px;
+}
+
+
+/* =========================================================
+   INPUT
+========================================================= */
+
+.phoenix-input-group {
+    border: 1px solid #dce2ea;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.25s ease;
+}
+
+.phoenix-input-group:focus-within {
+    border-color: #3178d6;
+    box-shadow: 0 0 0 3px rgba(49, 120, 214, 0.1);
+}
+
+.phoenix-input-group .input-group-text {
+    border: none;
+    background: #f8fafc;
+    color: #687386;
+}
+
+.phoenix-input-group .form-control {
+    border: none;
+    box-shadow: none;
+    min-height: 48px;
+    font-size: 14px;
+}
+
+.phoenix-input-group .form-control:focus {
+    box-shadow: none;
+}
+
+.phoenix-input-icon {
+    font-size: 15px;
+}
+
+
+/* =========================================================
+   FORGOT PASSWORD
+========================================================= */
+
+.phoenix-forgot {
+    color: #3178d6 !important;
+    text-decoration: none !important;
+    padding: 0;
+}
+
+.phoenix-forgot:hover {
+    color: #1859ad !important;
+}
+
+
+/* =========================================================
+   LOGIN BUTTON
+========================================================= */
+
+.phoenix-login-button {
+    border: none;
+    border-radius: 10px;
+    background: #18317d;
+    color: white;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.phoenix-login-button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.15),
+        transparent
+    );
+    transition: left 0.6s ease;
+}
+
+.phoenix-login-button:hover::before {
+    left: 100%;
+}
+
+.phoenix-login-button:hover {
+    background: #102664;
+    transform: translateY(-1px);
+    box-shadow: 0 8px 20px rgba(24, 49, 125, 0.2);
+}
+
+.phoenix-arrow {
+    margin-left: 10px;
+    font-size: 18px;
+    transition: transform 0.25s ease;
+}
+
+.phoenix-login-button:hover .phoenix-arrow {
+    transform: translateX(5px);
+}
+
+
+/* =========================================================
+   MOBILE LOGO
+========================================================= */
+
+.phoenix-mobile-logo {
+    width: 70px;
+    height: 70px;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #18317d;
+    color: white;
+    font-size: 17px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.phoenix-footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    color: #98a2b3;
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   MAIN BACKGROUND
+========================================================= */
+
+.phoenix-login-page {
+    position: relative;
+    overflow: hidden;
+    background: #eef3f9;
+}
+
+.phoenix-background {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.phoenix-login-card {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    min-height: 650px;
+    overflow: hidden;
+    border-radius: 20px;
+    background: white;
+    box-shadow: 0 25px 70px rgba(20, 35, 60, 0.15);
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 991.98px) {
+
+    .phoenix-login-card {
+        max-width: 560px;
+        min-height: auto;
+    }
+
+    .phoenix-login-panel {
+        min-height: auto;
+    }
+
+    .phoenix-form-container {
+        padding: 40px 30px;
+        max-width: 100%;
+    }
+
+}
+
+
+@media (max-width: 575.98px) {
+
+    .phoenix-login-page {
+        padding: 15px !important;
+    }
+
+    .phoenix-login-card {
+        border-radius: 15px;
+    }
+
+    .phoenix-form-container {
+        padding: 30px 20px;
+    }
+
+    .phoenix-login-title {
+        font-size: 29px;
+    }
+
+    .phoenix-footer {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .left-grid,
+    .left-glow,
+    .left-line,
+    .left-orbit,
+    .left-dot,
+    .phoenix-logo-circle,
+    .phoenix-status-dot {
+        animation: none !important;
+    }
+
+}
+
